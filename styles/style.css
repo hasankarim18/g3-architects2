@@ -382,15 +382,44 @@ fact box
   gap: 30px;
 }
 
+@keyframes rotatingborder {
+  0% {
+    border: 4px solid var(--action);
+     border-right-color: green;
+    }
+  25% {
+     border: 4px solid var(--action);
+    border-bottom-color: green;
+   }
+  50% {
+     border: 4px solid var(--action);
+     border-left-color: green;
+   }
+  75% {
+     border: 4px solid var(--action);
+     border-top-color: green; 
+  }
+  100% { 
+     border: 4px solid var(--action);
+    border-right-color: green; 
+  }
+ 
+}
+
 .fact_box{
-   border: 1px solid var(--action);
+  border: 2px solid var(--action);
+  border-right-color: green;
   border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   padding: 45px 36px;
+  animation: rotatingborder 2s;
+  animation-iteration-count: infinite;
 }
+
+
 .fact_box img{
   width: 45px;
   height: 45px;
