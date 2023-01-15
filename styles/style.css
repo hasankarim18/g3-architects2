@@ -28,6 +28,24 @@ img {
   max-width: 100%;
 }
 
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+.section_title{
+  font-size: 45px;  
+}
+
 .text-dark1 {
   color: var(--darkOne) !important;
 }
@@ -251,8 +269,67 @@ team section
   grid-area: f;
 }
 
+
+
+.feature_title h3 {
+  font-size: 45px;
+  font-weight: 700;
+  line-height: 53px;
+  margin-bottom: 24px;
+}
+
+/* feature content */
+
+.feature {
+  display: flex;
+  align-items: center;
+}
+
+.feature_content {
+  max-width: 580px;
+}
+.feature_content p{
+  margin-bottom: 30px;
+}
+
+.feature_box {
+  max-width: 580px;
+  padding: 30px; 
+  background: #ffffff;
+  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.06);
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+
+.feature_box h3{
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.feature_box p{
+  font-size: 16px;
+  line-height: 26px;
+}
+
+/* ** feature image  */
+.feature_image_container {
+  padding-left: 50px;
+}
+
+
 .f_exp_container {
   display: inline-block;
+}
+
+
+.architect_img{
+  position: relative;
+}
+
+.f_exp_container{
+  position: absolute;
+  left: 0;
+  bottom:-50px;
 }
 
 .f_experience {
@@ -276,54 +353,108 @@ team section
   color: #fff;
 }
 
-.feature_title h3 {
-  font-size: 45px;
-  font-weight: 700;
-  line-height: 53px;
-  margin-bottom: 24px;
+/* *************
+  facts section
+*/
+
+.facts{
+  margin-bottom: 100px;
 }
 
-/* feature content */
-
-.feature {
-  display: flex;
-  align-items: center;
+.facts_title{
+ max-width: 40%;
+ margin-bottom: 100px;
 }
 
-.feature_content {
-  max-width: 580px;
-}
-
-.feature_box {
-  max-width: 580px;
-  padding: 30px; 
-  background: #ffffff;
-  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.06);
-  border-radius: 8px;
-}
-
-.feature_box h3{
-  font-size: 20px;
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-.feature_box p{
+.facts_title p{
+  color: var(--darkThree);
   font-size: 16px;
   line-height: 26px;
 }
 
-/* ** feature image  */
-.feature_image_container {
-  position: relative;  
-  padding-left: 50px;
+/* **************
+fact box
+
+*/
+.fact_box_container{
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 30px;
 }
 
-.f_exp_container{
-  position: absolute;
-  left: 0;
-  bottom:-100px;
+.fact_box{
+   border: 1px solid var(--action);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 45px 36px;
+}
+.fact_box img{
+  width: 45px;
+  height: 45px;
+  margin-bottom: 10px;
 }
 
+.fact_box:hover img {
+  /* Start the shake animation and make the animation last for 0.5 seconds */
+  animation: shake 0.5s;
+
+  /* When the animation is finished, start again */
+  animation-iteration-count: infinite;
+}
+
+.fact_box h3{
+  font-size: 45px;
+  color: var(--darkTwo);
+  margin-bottom: 10px;
+}
+
+.fact_box p{
+  font-size: 20px;
+  text-transform: capitalize;
+  color: var(--darkThree);
+}
+
+.sponsor{
+  margin-bottom: 130px;
+}
+
+.sponsor_title{
+  max-width: 100%;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.sponsor_logos{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+
+
+
+
+/* .s_logo::after{
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  ba
+} */
+
+.s_logo img{
+  width: 170px;
+  filter: grayscale(100%)
+}
+
+.footer{
+  padding: 40px;
+  text-align: center;
+  background-color: var(--headerBg);
+}
 
 .hide{
   display: none;
